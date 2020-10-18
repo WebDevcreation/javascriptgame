@@ -1,7 +1,9 @@
 function generate()
 {
-	var num = Math.random()*1000000;
-	num = Math.round(num);
+	var num = (1+Math.random())*100000;
+	k = (4+Math.random());
+	num = Math.round(num*k);
+	console.log(num);
 	localStorage.setItem("RandVal",num);
 	document.getElementById("num").innerHTML = localStorage.getItem("RandVal");
 	document.getElementById("ref").innerHTML = "Refreshing the page in 5 seconds...";
