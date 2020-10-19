@@ -34,8 +34,13 @@ function check()
 			if(temp[i]==chk[i])
 				count++;
 		}
-		if (count==6)
+		document.getElementById("res").style.display = "block";
+		if (count==6){
 			document.getElementById("res").innerHTML = " Correct Guess";
+			document.body.style.backgroundImage= 'url("https://media.giphy.com/media/l0IygWpszunxnkMAo/giphy.gif")';
+			document.body.style.backgroundRepeat = "no-repeat";
+			document.body.style.backgroundSize = "cover";
+		}
 		else if(count==0 || count==1)
 			document.getElementById("res").innerHTML = count+" correct guess";
 		else
