@@ -18,12 +18,13 @@ function generate()
 function check()
 {
 	var chk = document.forms["form"]["valchk"].value;
-	document.getElementById("res").style.display = "block";
+	var resEl = document.getElementById("res");
+	resEl.style.display = "block";
 	if(chk=="")
-		document.getElementById("res").innerHTML = " Enter a number";
+		resEl.innerHTML = " Enter a number";
 		//alert("Enter a number");
 	else if(chk.length!=6)
-		document.getElementById("res").innerHTML = " Enter a six digit number";
+		resEl.innerHTML = " Enter a six digit number";
 		//alert("Enter a six digit number");
 	else
 	{
@@ -35,11 +36,11 @@ function check()
 				count++;
 		}
 		if (count==6)
-			document.getElementById("res").innerHTML = " Correct Guess";
+			resEl.innerHTML = " Correct Guess";
 		else if(count==0 || count==1)
-			document.getElementById("res").innerHTML = count+" correct guess";
+			resEl.innerHTML = count+" correct guess";
 		else
-			document.getElementById("res").innerHTML = count+" correct guesses";
+			resEl.innerHTML = count+" correct guesses";
 	}
 	var $form = $('form');
 	$form.submit(function(){
