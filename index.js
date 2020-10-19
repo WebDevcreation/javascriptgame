@@ -18,10 +18,13 @@ function generate()
 function check()
 {
 	var chk = document.forms["form"]["valchk"].value;
+	document.getElementById("res").style.display = "block";
 	if(chk=="")
-		alert("Enter a number");
+		document.getElementById("res").innerHTML = " Enter a number";
+		//alert("Enter a number");
 	else if(chk.length!=6)
-		alert("Enter a six digit number");
+		document.getElementById("res").innerHTML = " Enter a six digit number";
+		//alert("Enter a six digit number");
 	else
 	{
 		var temp = localStorage.getItem("RandVal");
@@ -31,7 +34,6 @@ function check()
 			if(temp[i]==chk[i])
 				count++;
 		}
-		document.getElementById("res").style.display = "block";
 		if (count==6)
 			document.getElementById("res").innerHTML = " Correct Guess";
 		else if(count==0 || count==1)
